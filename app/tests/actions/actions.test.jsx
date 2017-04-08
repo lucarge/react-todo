@@ -90,6 +90,23 @@ describe('Actions', () => {
     expect(response).toEqual(action);
   });
 
+  it('should generate login action object', () => {
+    const action = {
+      type: 'LOGIN',
+      uid: '123abc'
+    };
+    const response = actions.login(action.uid);
+    expect(response).toEqual(action);
+  });
+
+  it('should generate logout action object', () => {
+    const action = {
+      type: 'LOGOUT'
+    };
+    const response = actions.logout();
+    expect(response).toEqual(action);
+  });
+
   describe('Tests with firebase todos', () => {
     var testTodoRef;
 
